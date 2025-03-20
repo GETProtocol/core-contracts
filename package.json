@@ -18,7 +18,7 @@
     "@matterlabs/hardhat-zksync": "^1.3.0",
     "@matterlabs/zksync-contracts": "^0.6.1",
     "@nomicfoundation/hardhat-verify": "^2.0.9",
-    "@openzeppelin/contracts": "^5.1.0",
+    "@openzeppelin/contracts": "^5.2.0",
     "@types/chai": "^4.3.7",
     "@types/mocha": "^10.0.7",
     "@types/node": "^22.10.1",
@@ -30,5 +30,10 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "zksync-ethers": "^6.15.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.2.0",
+    "@uniswap/v3-core": "^1.0.1",
+    "@uniswap/v3-periphery": "^1.4.4"
   }
 }

@@ -1,50 +1,67 @@
-# ZKsync Hardhat project template
+# ZKsync Smart Contracts
 
-This project was scaffolded with [zksync-cli](https://github.com/matter-labs/zksync-cli).
+This repository contains the Open Ticketing Ecosystem's core smart contracts adapted for ZKsync.
 
-## Project Layout
+## Repository Contents
 
-- `/contracts`: Contains solidity smart contracts.
-- `/deploy`: Scripts for contract deployment and interaction.
-- `/test`: Test files.
-- `hardhat.config.ts`: Configuration settings.
+- `/contracts`: Contains the solidity smart contracts for the ticketing suite.
 
-## How to Use
+## Environment Setup
 
-- `npm run compile`: Compiles contracts.
-- `npm run deploy`: Deploys using script `/deploy/deploy.ts`.
-- `npm run interact`: Interacts with the deployed contract using `/deploy/interact.ts`.
-- `npm run test`: Tests the contracts.
+### Prerequisites
 
-Note: Both `npm run deploy` and `npm run interact` are set in the `package.json`. You can also run your files directly, for example: `npx hardhat deploy-zksync --script deploy.ts`
+- Node.js and bun installed
+- Docker installed (for local development)
 
-### Environment Settings
+### Setup Steps
 
-To keep private keys safe, this project pulls in environment variables from `.env` files. Primarily, it fetches the wallet's private key.
+1. Clone the repository
 
-Rename `.env.example` to `.env` and fill in your private key:
-
+2. Install dependencies:
 ```
-WALLET_PRIVATE_KEY=your_private_key_here...
+bun install
 ```
 
-### Network Support
+3. Set up environment variables:
+   - Rename `.env.example` to `.env` 
+   - Add your private key:
+   ```
+   WALLET_PRIVATE_KEY=your_private_key_here...
+   ```
 
-`hardhat.config.ts` comes with a list of networks to deploy and test contracts. Add more by adjusting the `networks` section in the `hardhat.config.ts`. To make a network the default, set the `defaultNetwork` to its name. You can also override the default using the `--network` option, like: `hardhat test --network dockerizedNode`.
+### Local Development Environment
 
-### Local Tests
+To set up a local ZKsync development environment:
 
-Running `npm run test` by default runs the [ZKsync In-memory Node](https://docs.zksync.io/build/test-and-debug/in-memory-node) provided by the [@matterlabs/hardhat-zksync-node](https://docs.zksync.io/build/tooling/hardhat/hardhat-zksync-node) tool.
+1. Start Docker:
+```
+docker compose up -d
+```
 
-Important: ZKsync In-memory Node currently supports only the L2 node. If contracts also need L1, use another testing environment like Dockerized Node. Refer to [test documentation](https://docs.zksync.io/build/test-and-debug) for details.
+2. Start ZKSync Local Node:
+```
+yarn zksync-cli dev start
+```
+
+## Compiling Contracts
+
+To compile the contracts:
+
+```
+yarn compile
+```
+
+## Network Configuration
+
+The project supports multiple networks for contract deployment. Network configurations are specified in `hardhat.config.ts`. You can add more networks by adjusting the `networks` section in this file.
 
 ## Useful Links
 
-- [Docs](https://docs.zksync.io/build)
-- [Official Site](https://zksync.io/)
-- [GitHub](https://github.com/matter-labs)
-- [Twitter](https://twitter.com/zksync)
-- [Discord](https://join.zksync.dev/)
+- [ZKsync Docs](https://docs.zksync.io/build)
+- [ZKsync Official Site](https://zksync.io/)
+- [ZKsync GitHub](https://github.com/matter-labs)
+- [ZKsync Twitter](https://twitter.com/zksync)
+- [ZKsync Discord](https://join.zksync.dev/)
 
 ## License
 

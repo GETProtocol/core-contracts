@@ -40,7 +40,7 @@ docker compose up -d
 
 2. Start ZKSync Local Node:
 ```
-yarn zksync-cli dev start
+bun run zksync-cli dev start
 ```
 
 ## Compiling Contracts
@@ -48,7 +48,7 @@ yarn zksync-cli dev start
 To compile the contracts:
 
 ```
-yarn compile
+bun compile
 ```
 
 ## Network Configuration
